@@ -1,69 +1,80 @@
-
 # Comprehensive Analysis of Amazon Customer Reviews for Enhanced Product Insights
 
-A comprehensive analysis of Amazon customer reviews leveraging NLP, machine learning, and deep learning techniques to gain valuable insights into product ratings, categories, and review helpfulness. This project applies a hybrid approach using Term Frequency-Inverse Document Frequency (TF-IDF) and BERT embeddings, combined with various ML and DL models, to analyze large-scale Amazon review data for enhanced product insights.
-
----
+This project explores methods for analyzing and predicting various characteristics of Amazon U.S. customer reviews using machine learning (ML) and deep learning (DL) techniques. Focusing on star rating prediction, product category classification, and review helpfulness, this study combines TF-IDF and BERT embeddings with multiple ML and DL models to derive insights from customer reviews.
 
 ## Table of Contents
-- [Project Overview](#project-overview)
-- [Folder Structure](#folder-structure)
-- [Technologies Used](#technologies-used)
-- [Data Preprocessing Techniques](#data-preprocessing-techniques)
-- [Embedding Generation](#embedding-generation)
-- [Machine Learning Models](#machine-learning-models)
-- [Deep Learning Models](#deep-learning-models)
+- [Introduction](#introduction)
+- [Dataset](#dataset)
+- [Objectives](#objectives)
+- [Methodology](#methodology)
+  - [Data Preprocessing](#data-preprocessing)
+  - [Embedding Generation](#embedding-generation)
+  - [Machine Learning Models](#machine-learning-models)
+  - [Deep Learning Models](#deep-learning-models)
 - [Results](#results)
-- [Running the Project](#running-the-project)
-- [Future Work](#future-work)
-- [License](#license)
+- [Visualizations](#visualizations)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Conclusion](#conclusion)
 
----
+## Introduction
+With the growing influence of online reviews on purchasing decisions, this project aims to analyze large-scale Amazon customer reviews to provide valuable insights for e-commerce platforms. The study focuses on:
+1. Predicting the star rating from review text.
+2. Classifying the product category.
+3. Assessing the helpfulness of reviews.
 
-## Project Overview
+## Dataset
+The dataset comprises 200,000 sampled Amazon U.S. customer reviews stored in `data/amazon_reviews.csv`. Additionally, the precomputed BERT embeddings for helpfulness, product category, and star rating tasks are provided:
+- `data/bert_embeddings_helpfulness.pkl`
+- `data/bert_embeddings_product_category.pkl`
+- `data/bert_embeddings_star_rating.pkl`
 
-This project explores Amazon US customer reviews using a combination of traditional and advanced NLP techniques. The study aims to address three main research questions (RQs):
-1. **Predicting Star Ratings**: Analyzing review text to predict star ratings (1-5).
-2. **Classifying Product Categories**: Categorizing reviews based on product type.
-3. **Predicting Review Helpfulness**: Determining the helpfulness of reviews.
+## Objectives
+1. **Star Rating Prediction**: Develop a model to predict the review's star rating based on the content.
+2. **Product Category Classification**: Classify reviews into relevant product categories.
+3. **Helpfulness Prediction**: Predict whether a review is marked helpful by other users.
 
-For each RQ, data preprocessing, vectorization, model selection, and visualization techniques reveal underlying trends and insights. The analysis combines feature extraction with ML and DL approaches, such as logistic regression, Naive Bayes, RNN, and LSTM, to evaluate performance on TF-IDF and BERT embeddings.
+## Methodology
+### Data Preprocessing
+- **Text Processing**: Tokenization, stopword removal, lemmatization, and lowercasing for consistency.
+- **Embedding Generation**: TF-IDF for term significance and BERT embeddings for contextual semantics.
 
----
+### Embedding Generation
+The project leverages both TF-IDF and BERT embeddings for feature extraction:
+- **BERT Embeddings**: Capturing contextual semantics using the `bert-base-uncased` model.
+- **TF-IDF Vectors**: Capturing syntactic frequency patterns with a maximum of 5,000 features.
 
-## Folder Structure
+### Machine Learning Models
+We implemented and compared multiple ML models:
+- **Logistic Regression**
+- **Naive Bayes**
+- **Random Forest**
+- **Support Vector Machine (SVM)**
+- **XGBoost**
 
-The repository is organized as follows:
+### Deep Learning Models
+To handle sequential data, the following DL models were employed:
+- **Recurrent Neural Network (RNN)**
+- **Long Short-Term Memory (LSTM)**
+- **Gated Recurrent Unit (GRU)**
 
-```
-Comprehensive-Analysis-of-Amazon-Customer-Reviews-for-Enhanced-Product-Insights/
-│
-├── data/
-│   ├── amazon_reviews.csv                   # Sampled dataset (optional, include if manageable)
-│   ├── bert_embeddings_star_rating.pkl       # BERT embeddings for RQ1
-│   ├── bert_embeddings_product_category.pkl  # BERT embeddings for RQ2
-│   ├── bert_embeddings_helpfulness.pkl       # BERT embeddings for RQ3
-│
-├── notebooks/
-│   └── Amazon_Reviews_Insights_Analysis.ipynb  # Main Jupyter Notebook with all code
-│
-├── requirements.txt                           # Dependencies for the project
-└── README.md                                  # Project documentation
-```
+### Evaluation Metrics
+- **F1-Score**: Used for star rating and product category classification tasks due to class imbalance.
+- **Accuracy**: Used for helpfulness prediction due to a balanced dataset.
 
----
+## Results
+Results for each research question are stored and discussed in `notebooks/Amazon_Reviews_Insights_Analysis.ipynb`. We observe that BERT embeddings often outperform TF-IDF, especially with RNN-based models, due to their context-aware nature.
 
-## Technologies Used
-- **Python**: Core programming language.
-- **NLP Libraries**: NLTK for text preprocessing and tokenization.
-- **Machine Learning**: Scikit-learn for TF-IDF vectorization and ML models.
-- **Deep Learning**: PyTorch for RNN, LSTM, GRU models; Transformers for BERT embeddings.
-- **Data Visualization**: Matplotlib for generating visual insights.
+## Visualizations
+The project includes several visualizations for data exploration:
+- **Word Clouds** for frequently occurring terms in various star ratings and helpfulness categories.
+- **Bar Charts** showing distribution patterns for star ratings and product categories.
 
----
+## Requirements
+The required Python packages are listed in `requirements.txt`.
 
-## Data Preprocessing Techniques
-- **Lowercasing**: Ensures uniformity by converting text to lowercase.
-- **Tokenization**: Splits text into individual words for further processing.
-- **Stopword Removal**: Filters out common but uninformative words.
-- **Lemmatization**: Reduces words to their base forms for improved model generalization.
+## Usage
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+
