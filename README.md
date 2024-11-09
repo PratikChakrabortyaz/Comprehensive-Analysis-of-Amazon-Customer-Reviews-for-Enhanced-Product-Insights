@@ -16,6 +16,7 @@ This project explores methods for analyzing and predicting various characteristi
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [Conclusion](#conclusion)
+- [License](#license)
 
 ## Introduction
 With the growing influence of online reviews on purchasing decisions, this project aims to analyze large-scale Amazon customer reviews to provide valuable insights for e-commerce platforms. The study focuses on:
@@ -24,10 +25,11 @@ With the growing influence of online reviews on purchasing decisions, this proje
 3. Assessing the helpfulness of reviews.
 
 ## Dataset
-The dataset comprises 200,000 sampled Amazon U.S. customer reviews stored in `data/amazon_reviews.csv`. Additionally, the precomputed BERT embeddings for helpfulness, product category, and star rating tasks are provided:
-- `data/bert_embeddings_helpfulness.pkl`
-- `data/bert_embeddings_product_category.pkl`
-- `data/bert_embeddings_star_rating.pkl`
+The dataset used in this project is the **Amazon US Customer Reviews Dataset**, available on Kaggle:
+- [Amazon US Customer Reviews Dataset on Kaggle](https://www.kaggle.com/datasets/cynthiarempel/amazon-us-customer-reviews-dataset/data?select=amazon_reviews_multilingual_US_v1_00.tsv)
+  
+Download the dataset from Kaggle and sample it based on the project requirements:
+- **Full Dataset**: The dataset contains millions of reviews across various product categories. For computational efficiency, a random sample of **200,000 reviews** is recommended.
 
 ## Objectives
 1. **Star Rating Prediction**: Develop a model to predict the review's star rating based on the content.
@@ -77,4 +79,8 @@ The required Python packages are listed in `requirements.txt`.
 1. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
 
