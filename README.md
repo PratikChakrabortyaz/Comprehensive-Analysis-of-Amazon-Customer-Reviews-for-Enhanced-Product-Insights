@@ -1,6 +1,11 @@
-# Comprehensive Analysis of Amazon Customer Reviews for Enhanced Product Insights
+ Comprehensive Analysis of Amazon Customer Reviews for Enhanced Product Insights
 
-This project explores methods for analyzing and predicting various characteristics of Amazon U.S. customer reviews using machine learning (ML) and deep learning (DL) techniques. Focusing on star rating prediction, product category classification, and review helpfulness, this study combines TF-IDF and BERT embeddings with multiple ML and DL models to derive insights from customer reviews.
+This repository contains the **experimental implementation and analysis** corresponding to the research paper:
+
+**A Comprehensive Framework for Multi-Aspect Analysis of Amazon Customer Reviews Using Machine and Deep Learning**  
+DOI: https://doi.org/10.21203/rs.3.rs-7979960/v1
+
+The work investigates multiple aspects of Amazon U.S. customer reviews using machine learning (ML) and deep learning (DL) models. The framework focuses on **star rating prediction**, **product category classification**, and **review helpfulness analysis**, integrating traditional feature representations with contextual language embeddings.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -79,6 +84,20 @@ The required Python packages are listed in `requirements.txt`.
 1. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@article{chakraborty2025comprehensive,
+  title   = {A Comprehensive Framework for Multi-Aspect Analysis of Amazon Customer Reviews Using Machine and Deep Learning},
+  author  = {Chakraborty, Pratik and Ameen, Shaik Nurul and Nayak, Ashalatha},
+  year    = {2025},
+  journal = {Research Square},
+  doi     = {10.21203/rs.3.rs-7979960/v1}
+}
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
