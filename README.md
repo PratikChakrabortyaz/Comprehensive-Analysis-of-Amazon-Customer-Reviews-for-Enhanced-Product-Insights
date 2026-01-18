@@ -20,8 +20,9 @@ The work investigates multiple aspects of Amazon U.S. customer reviews using mac
 - [Visualizations](#visualizations)
 - [Requirements](#requirements)
 - [Usage](#usage)
-- [Conclusion](#conclusion)
+- [Citation](#citation)
 - [License](#license)
+
 
 ## Introduction
 With the growing influence of online reviews on purchasing decisions, this project aims to analyze large-scale Amazon customer reviews to provide valuable insights for e-commerce platforms. The study focuses on:
